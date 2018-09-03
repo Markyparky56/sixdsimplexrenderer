@@ -84,7 +84,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\local\FastNoise;C:\local\libpng-1.6.32;C:\local\png++-0.2.9;C:\local\boost_1_66_0\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\local\libpng-1.6.32\projects\vstudio\x64\Release;C:\local\boost_1_66_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpng16.lib;libboost_system-vc141-mt-gd-x64-1_66.lib;libboost_filesystem-vc141-mt-gd-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,13 +114,32 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\local\FastNoise;C:\local\libpng-1.6.32;C:\local\png++-0.2.9;C:\local\boost_1_66_0\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_MBCS;_CRT_SECURE_NO_WARNINGS;BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE;FN_USE_DOUBLES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\local\libpng-1.6.32\projects\vstudio\x64\Release;C:\local\boost_1_66_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libpng16.lib;libboost_system-vc141-mt-x64-1_66.lib;libboost_filesystem-vc141-mt-x64-1_66.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\..\local\FastNoise\FastNoise.cpp" />
+    <ClCompile Include="ColourGradient.cpp" />
+    <ClCompile Include="FrameFarm.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ThreadFarm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Channel.hpp" />
+    <ClInclude Include="ColourGradient.hpp" />
+    <ClInclude Include="FrameFarm.hpp" />
+    <ClInclude Include="GenerateFrameTask.hpp" />
+    <ClInclude Include="IdPool.hpp" />
+    <ClInclude Include="ThreadFarm.hpp" />
+    <ClInclude Include="ThreadTask.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
